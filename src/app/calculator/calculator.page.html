@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>🧮 Smart Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="display-card">
+    <ion-card-content>
+      <div class="history">{{ historyText }}</div>
+      <div class="display">{{ display }}</div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row *ngFor="let row of buttonLayout">
+      <ion-col *ngFor="let btn of row">
+        <ion-button expand="block" shape="round" fill="outline" color="dark" (click)="onButtonClick(btn)">
+          {{ btn }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
